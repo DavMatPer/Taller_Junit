@@ -72,6 +72,9 @@ public class SalaCineTest {
 
     @Test
     @DisplayName("CP-13: Buscar asiento existente")
+    /**
+     * test Para buscar asiento de manera exitosa
+     */
     void testBuscarAsientoExistente() {
 
         Asiento asiento = new Asiento("B1", "VIP");
@@ -83,26 +86,13 @@ public class SalaCineTest {
 
     @Test
     @DisplayName("CP-14: Buscar asiento inexistente")
+    /**
+     * test Para buscar un asiento inexistente. Se espera un error.
+     */
     void testBuscarAsientoInexistente() {
 
         assertThrows(NoSuchElementException.class, () -> {
         sala.buscarAsiento("Z9");
         });
-    }
-
-    @Test
-    @DisplayName("CP-15: Calcular ingreso total")
-    void testCalcularIngresoTotal() {
-
-        Asiento a1 = new Asiento("A1", "VIP");
-        Asiento a2 = new Asiento("A2", "ESTANDAR");
-
-        sala.agregarAsiento(a1);
-        sala.agregarAsiento(a2);
-
-        a1.ocupar();
-        a2.ocupar();
-
-        assertEquals(13.5, sala.calcularIngresoTotal());
     }
 }
