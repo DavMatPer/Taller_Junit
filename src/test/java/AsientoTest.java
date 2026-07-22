@@ -4,6 +4,7 @@ import static org.junit.jupiter.api.Assertions.*;
 class AsientoTest {
     Asiento asiento;
     Asiento asientoLimite;
+    Asiento asientoEstandar;
 
     @BeforeEach
     void setUp(){
@@ -18,12 +19,15 @@ class AsientoTest {
     }
 
     // TODO: Traducir los demás casos de su tabla a métodos @Test.
+    @BeforeEach
+    void setUpEstandar(){
+        asientoEstandar=new Asiento("E1","ESTANDAR");
+    }
 
     @Test
     @DisplayName("CP-04: Precio asiento valido Estandar")
     void calcularPrecioValido(){
-        Asiento a = new Asiento("E1", "ESTANDAR");
-        assertEquals(5.0, a.calcularPrecioBase());
+        assertEquals(5.0, asientoEstandar.calcularPrecioBase());
     }
 
     @Test
