@@ -1,13 +1,13 @@
 import java.util.ArrayList;
 import java.util.List;
 
-public class ReservaService {
+public class ReservasService {
 
     private static final int MAX_ASIENTOS_POR_COMPRA = 6;
 
     private SalaCine sala;
 
-    public ReservaService(SalaCine sala) {
+    public ReservasService(SalaCine sala) {
         this.sala = sala;
     }
 
